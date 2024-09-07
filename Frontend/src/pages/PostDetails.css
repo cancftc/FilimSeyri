@@ -1,0 +1,154 @@
+.post-details-wrapper {
+  margin: 15px;
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.post-details-content-left {
+  padding: 20px 40px;
+  text-align: center;
+  width: 60%;
+}
+
+.post-details-img{
+  height: 400px;
+  width: 700px;
+}
+
+.post-details-header{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.post-details-name{
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.post-details-avatar{
+  border-radius: 10px;
+  width: 60px;
+}
+
+.post-details-title{
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.post-details-description{
+  margin-top: 30px;
+  height: 240px;
+  overflow-y: auto;
+}
+
+.post-details-description::-webkit-scrollbar {
+  width: 5px; 
+}
+.post-details-description::-webkit-scrollbar-thumb {
+  background-color: #d0d1d5;
+  border-radius: 10px; 
+}
+
+.post-details-content-rigth{
+  width: 40%;
+}
+
+.review-wrapper{
+  padding: 20px 0px;
+  border-left: 1px solid #ccc;
+  height: 850px;
+}
+
+.review-content{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.review-content-header{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.review-content2{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.review-content img{
+  border-radius: 10px;
+  height: 33px;
+}
+
+.review-title{
+  font-size: 27px;
+  height: 70px;
+  margin-top: -20px;
+  font-weight: 600;
+  padding: 13px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.review-input{
+  padding: 0px 20px;
+  display: flex;
+  gap: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.review-input input{
+  margin-top: 14px;
+  width: 600px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #86878b;
+}
+
+.review-input input:focus{
+  outline: none;
+  border-color: black;
+}
+.review-input button{
+  margin-top: 14px;
+    width: 100px;
+    background-color: #eb0028;
+    border: 1px solid  #eb0028;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+.review-content3{
+  height: 710px;
+  overflow-y: auto;
+  padding: 10px 20px;
+}
+
+.review-content3::-webkit-scrollbar {
+  width: 5px; 
+}
+.review-content3::-webkit-scrollbar-thumb {
+  background-color: #d0d1d5;
+  border-radius: 10px; 
+}
+
+.reviews-date{
+  margin-right: 10px;
+}
+
+.reviews-review{
+  font-size: 15px;
+}
+
+.review-content3 .username{
+  font-weight: 600;
+  cursor: pointer;
+}

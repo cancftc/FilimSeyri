@@ -1,0 +1,132 @@
+.profile-wrapper{
+  margin: 15px;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+.profile-left{
+  display: flex;
+  gap: 20px;
+}
+.profile-name {
+  font-size: 30px;
+}
+.profile-img img {
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+}
+
+.profile-update button {
+  width: 200px;
+  height: 35px;
+  color: white;
+  background-color: #eb0028;
+  border: 1px solid #eb0028;
+  border-radius: 10px;
+  float: right;
+}
+
+.profile-post-wrapper{
+  display: grid;
+  margin-top: 15px;
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.profile-post-content{
+  border-radius: 10px;
+  height: 500px;
+  background-color: rgb(246, 243, 243);
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  position: relative;
+}
+
+.profile-post-img {
+  height: 60%;
+  border-radius: 10px;
+  width: 100%;
+  margin: 20px 0px;
+}
+
+.profile-post-name {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.profile-post-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+.profile-post-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.profile-post-avatar {
+  border-radius: 10px;
+  width: 40px;
+}
+
+.profile-post-description strong{
+  cursor: pointer;
+}
+
+.post-add button {
+  width: 100px;
+  height: 35px;
+  color: white;
+  background-color: #eb0028;
+  border: 1px solid #eb0028;
+  border-radius: 5px;
+}
+
+.form-control:focus {
+  outline: none;
+  box-shadow: none; /* Opsiyonel olarak gölgeyi kaldırabilirsiniz */
+  border: 1px solid #000;
+}
+
+.form-select:focus {
+  outline: none;
+  box-shadow: none; /* Opsiyonel olarak gölgeyi kaldırabilirsiniz */
+  border: 1px solid #000;
+}
+
+.profile-post-content i{
+  font-size: 22px;
+  float: right;
+  cursor: pointer;
+}
+
+.profile-post-content i:hover{
+  background-color: #dfdada;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.post-delete{
+  background-color: white;
+  width: 150px;
+  height: 30px;
+  margin-left: 273px;
+  margin-top: -30px;
+  border: 1px solid #dee0ea;
+  position: fixed;
+  z-index: 100px;
+  cursor: pointer;
+  border-radius: 5px;
+  position: absolute;
+}
+
+.post-delete:hover{
+  background-color: #dfdada;
+}
