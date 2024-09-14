@@ -3,7 +3,6 @@
 }
 
 .home-wrapper{
-  cursor: pointer;
 }
 
 .home-header {
@@ -35,6 +34,7 @@ p {
   height: 350px;
   text-align: center;
   border: 1px solid #ccc;
+  cursor: pointer;
 }
 .home-content img{
   height: 89%;
@@ -51,4 +51,22 @@ p {
 
 .description{
   font-size: 20px;
+}
+
+@media (max-width: 1200px) {
+  .home-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .home-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .home-container {
+    grid-template-columns: 1fr;
+  }
 }

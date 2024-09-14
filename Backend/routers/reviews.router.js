@@ -34,7 +34,7 @@ router.post("/getAllReviews", async (req, res) => {
         const { postId } = req.body;
         const reviews = await Reviews.find({
             postId : postId
-        });
+        }).sort({createdDate: -1});
 
         res.json(reviews);
     });

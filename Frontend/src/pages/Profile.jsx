@@ -30,8 +30,33 @@ function Profile() {
   const [gettByProfile, setGettByProfile] = useState(null);
   const [postDelete, setPostDelete] = useState({});
 
+  const [descriptionLength, setDescriptionLength] = useState(150);
+
+  const [errorMessages, setErrorMessages] = useState({
+    postTitle: "",
+    postDescription: "",
+    postImages: "",
+  });
+
+  const validatePostFields = () => {
+    const errors = {};
+    if (postTitle.trim() === "") {
+      errors.postTitle = "Başlık alanı gereklidir";
+    }
+    if (postDescription.trim() === "") {
+      errors.postDescription = "Açıklama alanı gereklidir";
+    }
+    if (!postImages) {
+      errors.postImages = "Resim alanı gereklidir";
+    }
+    setErrorMessages(errors);
+    return Object.keys(errors).length === 0;
+  };
+
   const postAdd = (event) => {
     event.preventDefault();
+
+    if (!validatePostFields()) return;
 
     const formData = new FormData();
     formData.append("name", postName);
@@ -106,6 +131,19 @@ function Profile() {
     }
   };
 
+  const handleResize = () => {
+    if (window.innerWidth <= 600) {
+      setDescriptionLength(150); 
+    } else if (window.innerWidth <= 1200) {
+      setDescriptionLength(60);  
+    } 
+    else if (window.innerWidth <= 1800) {
+      setDescriptionLength(100);  
+    } else {
+      setDescriptionLength(150); 
+    }
+  };
+
   useEffect(() => {
     let userString = localStorage.getItem("user");
     let user = JSON.parse(userString);
@@ -119,6 +157,8 @@ function Profile() {
     getCategory();
     getByProfile();
     getByPost();
+
+    handleResize();
   }, []);
 
   const deletePostIcon = (postId) => {
@@ -191,7 +231,7 @@ function Profile() {
                     alt={val.name}
                   />
                   <div className="profile-post-description">
-                    {val.description.slice(0, 160)}{" "}
+                  {val.description.slice(0, descriptionLength)}{" "}
                     <strong
                       onClick={() => navigate("/post-details/" + val._id)}
                     >
@@ -309,20 +349,24 @@ function Profile() {
                   <input
                     className="form-control"
                     value={postTitle}
-                    required
                     onChange={(e) => setPostTitle(e.target.value)}
                     type="text"
                   />
+                  {errorMessages.postTitle && (
+                    <div className="text-danger">{errorMessages.postTitle}</div>
+                  )}
                 </div>
                 <div className="mb-3">
                   <label className="col-form-label">Açıklama</label>
                   <textarea
                     className="form-control"
                     value={postDescription}
-                    required
                     onChange={(e) => setPostDescription(e.target.value)}
                     type="text"
                   />
+                                    {errorMessages.postDescription && (
+                    <div className="text-danger">{errorMessages.postDescription}</div>
+                  )}
                 </div>
                 <div className="mb-3">
                   <label className="col-form-label">İl</label>
@@ -345,11 +389,13 @@ function Profile() {
                 <div className="mb-3">
                   <label className="col-form-label">Resim</label>
                   <input
-                    required
                     onChange={(e) => setPostImages(e.target.files[0])}
                     type="file"
                     className="form-control mb-3"
                   />
+                                    {errorMessages.postImages && (
+                    <div className="text-danger">{errorMessages.postImages}</div>
+                  )}
                 </div>
               </div>
               <div className="modal-footer">

@@ -22,6 +22,12 @@ function Header() {
     <div className="header">
       <div className="header-wrapper">
         <div className="header-right">
+          <div className="header-icon">
+          <Link className="link" to="/">
+            Film Seyri
+          </Link>
+          </div>
+          <div className="header-href">
           <Link className="link" to="/">
             AnaSayfa
           </Link>
@@ -38,14 +44,19 @@ function Header() {
               Kategoriler
             </Link>
           )}
+          </div>
         </div>
         <div className="header-center">
           <input type="text" placeholder="Ara..." />
         </div>
         <div className="header-left">
-          <Link to="/login">
+          {
+            !user &&
+            <Link to="/login">
             <i className="bi bi-person"></i>
           </Link>
+          }
+
         </div>
         {user && (
           <div>

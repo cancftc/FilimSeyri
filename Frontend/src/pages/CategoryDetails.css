@@ -1,7 +1,7 @@
 .category-details-wrapper {
   display: grid;
   margin: 15px;
-  gap: 10px;
+  gap: 15px;
   grid-template-columns: repeat(4, 1fr);
 }
 
@@ -51,4 +51,23 @@
 .category-details-center{
   height: 455px;
   cursor: pointer;
+}
+
+@media (max-width: 1400px) {
+  .category-details-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .category-details-wrapper {
+    grid-template-columns: repeat(2, 1fr); 
+    
+  }
+}
+
+@media (max-width: 600px) {
+  .category-details-wrapper {
+    grid-template-columns: 1fr; 
+  }
 }

@@ -79,6 +79,7 @@ const formatDate = (isoString) => {
 
   return (
     <div className="post-details-wrapper">
+      <div className="can">
       {postDetail.map((val, index) => {
         return (
           <div key={index} className="post-details-content-left">
@@ -148,17 +149,17 @@ const formatDate = (isoString) => {
             <form action="" onSubmit={reviewAdd}>
               <div className="review-input">
                 <input
-                  required
                   value={review}
                   onChange={(e) => setReview(e.target.value)}
                   type="text"
                   placeholder="Yorum ekleyin..."
-                />
-                <button>Yorum yap</button>
+                /> 
+                <button  className="btn btn-danger" disabled={!review.trim()}>Yorum yap</button>
               </div>
             </form>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

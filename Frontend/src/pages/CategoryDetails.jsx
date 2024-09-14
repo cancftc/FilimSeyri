@@ -7,6 +7,7 @@ function CategoryDetails() {
   const [gettCategory, SetgettCategory] = useState([]);
   const { name } = useParams();
   const navigate = useNavigate();
+  const [descriptionLength, setDescriptionLength] = useState(150);
 
   const getCategory = () => {
     axios
@@ -16,13 +17,28 @@ function CategoryDetails() {
       });
   };
 
+  
+        const handleResize = () => {
+          if (window.innerWidth <= 600) {
+            setDescriptionLength(150); 
+          } else if (window.innerWidth <= 1200) {
+            setDescriptionLength(60);  
+          } 
+          else if (window.innerWidth <= 1800) {
+            setDescriptionLength(100);  
+          } else {
+            setDescriptionLength(150); 
+          }
+        };
+
   useEffect(() => {
     getCategory();
+        handleResize();
   });
 
   return (
     <div className="category-details-wrapper">
-      {gettCategory.map((val, index) => {
+      {gettCategory && gettCategory.map((val, index) => {
         return (
           <div key={index} className="category-details-content">
             <div className="category-details-header">
@@ -46,11 +62,11 @@ function CategoryDetails() {
             <div className="category-details-title">{val.title}</div>
             <img
               className="category-details-img"
-              src={`http://localhost:5000/${val.images.path}`}
+              src={val.images && val.images.path ? `http://localhost:5000/${val.images.path.replace("\\", "/")}` : "default-image.jpg"}
               alt={val.name}
             />
             <div className="category-details-description">
-              {val.description.slice(0, 150)}{" "}
+            {val.description.slice(0, descriptionLength)}{" "}
               <strong>
                 devamı
               </strong>

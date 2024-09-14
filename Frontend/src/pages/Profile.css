@@ -33,14 +33,13 @@
 .profile-post-wrapper{
   display: grid;
   margin-top: 15px;
-  gap: 10px;
+  gap: 15px;
   grid-template-columns: repeat(4, 1fr);
 }
 
 .profile-post-content{
   border-radius: 10px;
   height: 500px;
-  background-color: rgb(246, 243, 243);
   padding: 20px;
   text-align: center;
   border: 1px solid #ccc;
@@ -129,4 +128,23 @@
 
 .post-delete:hover{
   background-color: #dfdada;
+}
+
+@media (max-width: 1400px) {
+  .profile-post-wrapper {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+@media (max-width: 900px) {
+  .profile-post-wrapper {
+    grid-template-columns: repeat(2, 1fr); 
+    
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-post-wrapper {
+    grid-template-columns: 1fr;
+  }
 }

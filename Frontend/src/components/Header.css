@@ -20,6 +20,11 @@
     gap: 20px;
 }
 
+.header-href{
+    display: flex;
+    gap: 15px;
+}
+
 .header-left i{
     font-size: 27px;
     color: white;
@@ -59,4 +64,38 @@
     border: 1px solid white;
     border-radius: 10px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1600px) {
+    .header-center input{
+        margin-left: 300px;
+        
+    }    
+}
+
+@media screen and (max-width: 1200px) {
+    .header-center input{
+        margin-left: 350px;
+        width: 300px;
+    }    
+}
+
+@media screen and (max-width: 900px) {
+    .header-center input{
+        display: none;
+    }
+
+    .header-right .header-href{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .header-center input{
+        display: none;
+    }
+
+    .header-right .header-href{
+        display: none;
+    }
 }
