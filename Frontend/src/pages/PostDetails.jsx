@@ -153,7 +153,7 @@ const formatDate = (isoString) => {
                   onChange={(e) => setReview(e.target.value)}
                   type="text"
                   placeholder="Yorum ekleyin..."
-                />
+                /> 
                 <button  className="btn btn-danger" disabled={!review.trim()}>Yorum yap</button>
               </div>
             </form>
