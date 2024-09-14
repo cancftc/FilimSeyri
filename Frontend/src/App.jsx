@@ -14,7 +14,7 @@ import UserProfile from './pages/UserProfile.jsx'
 function App() {
 
   return (
-    <div> 
+    <div className='deneme'> 
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
