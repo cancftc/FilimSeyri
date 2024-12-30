@@ -1,45 +1,47 @@
 const express = require("express");
 const router = express.Router();
 const Reviews = require("../models/reviews");
-const {v4: uuidv4} = require("uuid");
+const { v4: uuidv4 } = require("uuid");
 const response = require("../services/response.service");
 const User = require("../models/user");
 const upload = require("../services/file.service");
 
-router.post("/add",upload.single("images"), async(req, res)=>{
-    response(res, async()=> {
-        const {userName, review, postId, userId} = req.body;
-        const _id = uuidv4();
+router.post("/add", upload.single("images"), async (req, res) => {
+  response(res, async () => {
+    const { userName, review, postId, userId } = req.body;
+    const _id = uuidv4();
 
-        const user = await User.findById(userId);
-        const profileImg = user ? user.images : null;
+    const user = await User.findById(userId);
+    const profileImg = user ? user.images : null;
 
-        let reviews = new Reviews({
-            _id: _id,
-            userId: userId,
-            userName: userName,
-            review: review,
-            createdDate: new Date(),
-            postId: postId,
-            profileImg: profileImg
-        });
-        await reviews.save();
+    if (user) {
+      let reviews = new Reviews({
+        _id: _id,
+        userId: userId,
+        userName: userName,
+        review: review,
+        createdDate: new Date(),
+        postId: postId,
+        profileImg: profileImg,
+      });
+      await reviews.save();
 
-        res.json({message: "Yorumunuz başarıyla gönderildi"})
-    })
+      res.json({ message: "Yorumunuz başarıyla kaydedildi." });
+    } else {
+      res.json({ message: "Yorum yapabilmek için lütfen oturum açtığınızdan emin olun." });
+    }
+  });
 });
 
 router.post("/getAllReviews", async (req, res) => {
-    response(res, async () => {
-        const { postId } = req.body;
-        const reviews = await Reviews.find({
-            postId : postId
-        }).sort({createdDate: -1});
+  response(res, async () => {
+    const { postId } = req.body;
+    const reviews = await Reviews.find({
+      postId: postId,
+    }).sort({ createdDate: -1 });
 
-        res.json(reviews);
-    });
+    res.json(reviews);
+  });
 });
-
-
 
 module.exports = router;

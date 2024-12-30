@@ -11,11 +11,19 @@ const postSchema = new mongoose.Schema({
     userId: {
         type: String,
         required: true,
-        ref: 'User'  // Kullanıcı referansı
+        ref: 'User'
     },
     name: String,
     profileImg: Object,
     images: Object,
+
+    duration: String,
+    actors: String,
+    director: String,
+    writer: String,
+    production: String,
+    relaseDate: String,
+    videoIframeSrc: String,
     createdDate: Date,
     categories: [{type: String, ref: "Category"}]
 });

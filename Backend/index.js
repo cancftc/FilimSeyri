@@ -13,6 +13,7 @@ const categoryRouter = require("./routers/category.router");
 const postRouter = require("./routers/post.router");
 const profileRouter = require("./routers/profile.router");
 const reviewRouter = require("./routers/reviews.router");
+const favoriteRouter = require("./routers/favorite.router");
 
 
 app.use("/api/auth", authRouter);
@@ -20,6 +21,7 @@ app.use("/api/categories",categoryRouter);
 app.use("/api/post",postRouter);
 app.use("/api/profile",profileRouter);
 app.use("/api/review",reviewRouter);
+app.use("/api/favorite",favoriteRouter);
 
 
 connection();

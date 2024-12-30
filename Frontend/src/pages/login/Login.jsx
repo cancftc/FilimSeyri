@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import axios from "axios";
 import { useFormik } from 'formik';
-import { loginFormScheams } from "../schemas/loginFormSchemas";
+import { loginFormScheams } from "../../schemas/loginFormSchemas";
 
 function Login() {
   const navigate = useNavigate();

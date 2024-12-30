@@ -1,5 +1,5 @@
-.category-wrapper{
-    margin: 20px;
+.admin-category-wrapper{
+    margin: 35px 110px;
 }
 
 .content-table {
@@ -36,21 +36,11 @@
     border-bottom: 2px solid black;
 }
 
-.categoryButton{
+.admin-category-button{
     width: 120px;
     height: 35px;
     color: white;
-    background-color: #eb0028;
-    border: 1px solid #eb0028;
+    background-color: black;
+    border: 1px solid black;
     border-radius: 5px;
-}
-
-.category-img{
-    width: 250px;
-    height: 150px;
-}
-
-.addInput{
-    width: 200px;
-    height: 33px;
 }

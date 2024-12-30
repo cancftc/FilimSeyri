@@ -10,7 +10,7 @@
     border: 1px solid #dee0ea;
     border-radius: 10px;
     width: 430px;
-    height: 500px;
+    height: 460px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -20,7 +20,6 @@
 
 .logo{
     font-size: 30px;
-    margin-bottom: 15px;
 }
 
 .login-form form{
@@ -29,7 +28,7 @@
     gap: 10px;
 }
 
-.form-input3{
+.form-input2{
     height: 55px;
     border-radius: 10px;
     padding: 10px;
@@ -42,20 +41,25 @@
 
 .form-input:focus{
     outline: none;
-    border: 1px solid #ced0da;
+    border: 1px solid red;
 }
 
 .button{
-    background-color: #eb0028;
+    background-color: black;
     color: white;
     height: 55px;
     width: 380px;
-    border: 1px solid #eb0028;
+    border: 1px solid black;
     border-radius: 10px;
     cursor: pointer;
 }
 
 .register{
     text-decoration: none;
+    color: black;
+}
+
+.error{
     color: #eb0028;
+    font-size: 16px;
 }

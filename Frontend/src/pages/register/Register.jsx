@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 import axios from "axios";
 import { useFormik } from "formik";
-import { registerFormScheams } from "../schemas/registerFormSchemas";
+import { registerFormScheams } from "../../schemas/registerFormSchemas";
 
 export default function Register() {
   const navigate = useNavigate();

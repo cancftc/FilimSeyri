@@ -1,2 +1,13 @@
-.deneme{
+
+
+.main-content {
+    padding-top: 40px;
+}
+
+.spinner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
 }
